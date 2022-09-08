@@ -1,0 +1,11 @@
+@each $redSocial, $color in $redes {
+    .btn-#{$redSocial}{
+        color: #ffffff;
+        border:0;
+        padding: 10px;
+        border-radius: 05px;
+        cursor:pointer;
+        background-color: $color;
+    }
+    
+}

@@ -1,0 +1,33 @@
+
+$redes: (
+    twitter: #55acee,
+    facebook: #3a5795,
+    send-email: #c25e30
+);
+
+
+
+$estilos: (
+  back-color: linear-gradient(to left, #F999B7, #F9C5D5),
+  derecha: right,
+  centro: center,
+  izquierda: left,
+  font: 'Nanum Gothic', 
+  font-size: 30px,
+  rem: 1rem
+);
+
+footer {
+  background-image: map-get($estilos, back-color);
+
+}
+
+header{
+  background-image: map-get($estilos, back-color);
+  text-align: map-get($estilos, izquierda);
+}
+
+*{
+  font-family: map-get($estilos, font), sans-serif;
+  font-size: map-get($estilos, font-size);
+}

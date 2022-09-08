@@ -1,0 +1,13 @@
+@mixin sizes($width, $height) {
+      height: $height;
+      width: $width;
+}
+
+footer {
+    @include sizes(100%,100px)
+}
+
+.checkmark{
+    @include sizes(30px, 30px)
+   
+}
