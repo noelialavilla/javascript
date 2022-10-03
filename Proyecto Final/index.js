@@ -1,4 +1,4 @@
-/* Considere necesario agregar las librerias toastify y Sweet Alert ya que me ayudan a 
+/* Considere necesario agregar la libreria Sweet Alert ya que me ayuda a 
 comunicarme con los clientes de manera interactiva y visualmente atractiva*/
 let productos = [
     { id: 0, nombre: "Body Cherry in the Air", precio: 550 },
@@ -57,13 +57,25 @@ function mostrarTotal() {
         total += element.precio;
 
     });
-    alert("Su compra total es de " + total);
-    let medioPago = prompt("Para pagar con tarjeta ingrese 1, con transferencia ingrese 2: ")
-    pagar(medioPago);
-
+    
+    Swal.fire({
+        title: 'Su compra total es de $' + total+ '. Desea pagar con tarjeta o con transferencia?',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'Tarjeta',
+        denyButtonText: `Transferencia`,
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          Swal.fire('Se realizo el pago con tarjeta.', '', 'success')
+        } else if (result.isDenied) {
+          Swal.fire('Se realizo el pago con transferencia', '', 'success')
+        }
+      })
+   
 }
 
-function pagar(medioDePago) {
+/* function pagar(medioDePago) {
     switch (medioDePago) {
         case '1':
             alert("Se realizo el pago con tarjeta. ");
@@ -75,7 +87,7 @@ function pagar(medioDePago) {
             break;
     }
 
-}
+} */
 /* document.getElementById("contactButton").onclick = function () {
     location.href = "./contact.html";
 };
