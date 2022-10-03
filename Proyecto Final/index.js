@@ -1,5 +1,6 @@
+
 let productos = [
-    { id: 0, nombre: "Body Cherry the Air", precio: 550 },
+    { id: 0, nombre: "Body Cherry in the Air", precio: 550 },
     { id: 1, nombre: "Perfume Good Girl", precio: 900 },
     { id: 2, nombre: "Perfumina Sandalo Dulce", precio: 550 },
     { id: 3, nombre: "Perfume Cherry the Air", precio: 900 },
@@ -16,7 +17,14 @@ class Carrito {
 
     agregarAlCarrito(producto) {
         this.items.push(producto);
-        alert("Se agregó " + producto.nombre + " al carrito");
+        Swal.fire({
+            position: 'mid-mid',
+            icon: 'success',
+            title: 'Se ha agregado ' + producto.nombre + ' al carrito!',
+            showConfirmButton: false,
+            timer: 1800
+          })
+        
     }
 
 }
