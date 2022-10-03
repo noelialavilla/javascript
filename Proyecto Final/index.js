@@ -1,4 +1,5 @@
-
+/* Considere necesario agregar las librerias toastify y Sweet Alert ya que me ayudan a 
+comunicarme con los clientes de manera interactiva y visualmente atractiva*/
 let productos = [
     { id: 0, nombre: "Body Cherry in the Air", precio: 550 },
     { id: 1, nombre: "Perfume Good Girl", precio: 900 },
@@ -18,13 +19,14 @@ class Carrito {
     agregarAlCarrito(producto) {
         this.items.push(producto);
         Swal.fire({
-            position: 'mid-mid',
+            position: 'center',
             icon: 'success',
             title: 'Se ha agregado ' + producto.nombre + ' al carrito!',
             showConfirmButton: false,
             timer: 1800
-          })
-        
+        })
+
+
     }
 
 }
@@ -45,6 +47,7 @@ for (let i = 0; i <= 7; i++) {
     console.log(productos[i].id);
     boton2.addEventListener("click", () => miCarrito.agregarAlCarrito(
         new Producto(productos[i].id, productos[i].nombre, productos[i].precio)
+
     ));
 
 }
