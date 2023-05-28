@@ -1,0 +1,16 @@
+db.estudiantes.find({$or: [{nombre: 'Martin'},{nombre: 'Alejandra'}]})
+db.estudiantes.find({$and:[{edad: {$gt:10}}, {edad:{$lte:23}}]})
+db.estudiantes.find({nombre: {$in: ['Martin','Alejandra','Nora']}})
+db.estudiantes.find({$or: [{nombre: 'Martin'},{edad: 22}]})
+proyeccion:
+db.estudiantes.find({},{nombre:1})
+me traigo solo el atributo nombre
+db.estudiantes.find().sort({edad:1,nombre:-1})
+ordeno de manera ascendente por edad y por nombre descendente
+db.estudiantes.find().skip(2)
+saltea los primeros dos registros
+db.estudiantes.find().limit(2)
+me trae solo los primeros dos registros 
+db.estudiantes.find({},{nombre:1,_id:0,edad:1}).sort({edad:1})
+db.estudiantes.find({},{nombre:1,_id:0,edad:1}).sort({edad:-1}).skip(0).limit(2)
+db.estudiantes.updateOne({_id: ObjectId('64519ef4a62fbde62a3f7f2f')}, {$set: {nombre: 'Luis'}})
